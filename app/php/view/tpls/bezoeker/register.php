@@ -3,7 +3,7 @@
 ?>
 
 <div class="content">
-   <h1>Home Content</h1>
+   <h1>Register Content</h1>
 </div>
 
 <?php
