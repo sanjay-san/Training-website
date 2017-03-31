@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 30 mrt 2017 om 09:21
+-- Gegenereerd op: 31 mrt 2017 om 19:13
 -- Serverversie: 5.7.9
 -- PHP-versie: 5.6.16
 
@@ -73,11 +73,11 @@ CREATE TABLE IF NOT EXISTS `persons` (
   `street` varchar(50) DEFAULT NULL,
   `postal_code` varchar(10) DEFAULT NULL,
   `place` varchar(35) DEFAULT NULL,
-  `role` enum('instructeur','lid') NOT NULL,
+  `role` enum('instructeur','lid','admin') NOT NULL,
   `lesson_id` int(9) DEFAULT NULL,
   `registration_id` int(9) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `persons`
@@ -93,7 +93,8 @@ INSERT INTO `persons` (`id`, `loginname`, `password`, `firstname`, `preprovision
 (12, 'pavendonk', 'qwerty', 'Paul', NULL, 'Avendonk', '2017-02-28', 'male', 'paul@hotmail.com', '2017-03-11', 255, 'noodlestraat 42', '2222xl', 'den haag', 'instructeur', 3, NULL),
 (13, 'elok', 'qwerty', 'Els', NULL, 'Lok', '2017-02-28', 'male', 'els@hotmail.com', '2017-03-01', 275, 'noodlestraat 46', '2222xl', 'den haag', 'instructeur', 4, NULL),
 (14, 'kim', 'qwerty', 'kim', NULL, 'Peev', '2017-02-28', 'male', 'kim@hotmail.com', NULL, NULL, 'noodlestraat 44', '2222xl', 'den haag', 'lid', NULL, 5),
-(15, 'bas', 'qwerty', 'bas', NULL, 'Peev', '2017-02-28', 'male', 'bas@hotmail.com', NULL, NULL, 'noodlestraat 45', '2222xl', 'den haag', 'lid', NULL, 6);
+(15, 'bas', 'qwerty', 'bas', NULL, 'Peev', '2017-02-28', 'male', 'bas@hotmail.com', NULL, NULL, 'noodlestraat 45', '2222xl', 'den haag', 'lid', NULL, 6),
+(16, 'KittyCate', 'qwerty', 'Kitty', NULL, 'Cate', '2017-03-21', 'female', 'kittyCateCupcake@hotmail.com', '2017-03-24', 241, 'Cakestreet 13', '3221BH', 'Noodlestad', 'admin', NULL, NULL);
 
 -- --------------------------------------------------------
 
