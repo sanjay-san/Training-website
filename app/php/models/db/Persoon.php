@@ -10,15 +10,17 @@ class Persoon extends Entiteit{
     protected $loginname;
     protected $password;
     protected $firstname;
-    protected $preprovisin;
+    protected $preprovision;
     protected $lastname;
     protected $dateofbirth;
     protected $gender;
-    protected $emailaddres;
-    protected $hiring_date;
+    protected $emailaddress;
+    protected $hire_date;
     protected $salary;
     protected $street;
     protected $postal_code;
     protected $place;
-
+    protected $role;
+    protected $lesson_id;
+    protected $registration_id;
 }
