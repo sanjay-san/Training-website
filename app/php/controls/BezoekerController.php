@@ -4,6 +4,8 @@ use php\error as ERROR;
 
 class BezoekerController extends AbstractController {
     public function defaultAction() {
+      $typegebruiker = $this->model->getGebruikerRecht();
+      $this->view->set('typegebruiker', $typegebruiker);
       if($this->model->isPostLeeg()) {
         $this->view->set("note","vul uw gegevns in");
       } else {
@@ -12,6 +14,8 @@ class BezoekerController extends AbstractController {
     }
 
     public function registerAction() {
+      $typegebruiker = $this->model->getGebruikerRecht();
+      $this->view->set('typegebruiker', $typegebruiker);
       if($this->model->isPostLeeg()) {
         $this->view->set("note","vul uw gegevns in");
       } else {
@@ -20,6 +24,8 @@ class BezoekerController extends AbstractController {
     }
 
     public function trainingsAction() {
+      $typegebruiker = $this->model->getGebruikerRecht();
+      $this->view->set('typegebruiker', $typegebruiker);
       if($this->model->isPostLeeg()) {
         $this->view->set("note","vul uw gegevns in");
       } else {
@@ -28,6 +34,8 @@ class BezoekerController extends AbstractController {
     }
 
     public function gedragsregelsAction() {
+      $typegebruiker = $this->model->getGebruikerRecht();
+      $this->view->set('typegebruiker', $typegebruiker);
       if($this->model->isPostLeeg()) {
         $this->view->set("note","vul uw gegevns in");
       } else {
@@ -36,6 +44,8 @@ class BezoekerController extends AbstractController {
     }
 
     public function contactAction() {
+      $typegebruiker = $this->model->getGebruikerRecht();
+      $this->view->set('typegebruiker', $typegebruiker);
       if($this->model->isPostLeeg()) {
         $this->view->set("note","vul uw gegevns in");
       } else {
@@ -45,12 +55,11 @@ class BezoekerController extends AbstractController {
 
     public function login() {
       $resultInlog=$this->model->controleerInloggen();
-      var_dump($resultInlog);
       switch($resultInlog){
           case REQUEST_SUCCESS:
               $this->view->set("note","Welkom ".$_SESSION['gebruiker']->getFirstname());
               $recht = $this->model->getGebruikerRecht();
-              $this->forward("default",$recht);
+              $this->forward("default", $recht);
               break;
           case REQUEST_FAILURE_DATA_INVALID:
               $this->view->set("note","Gegevens kloppen niet, probeer het opnieuw");
