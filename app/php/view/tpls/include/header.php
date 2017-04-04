@@ -14,34 +14,61 @@
           <h1>Training centrum Den Haag</h1>
         </section>
         <section class="login">
-          <form  method="POST" autocomplete="off">
-            <table>
-              <tr>
-                <td>
-                  <input type="text" autocomplete="off" placeholder="gebuikersnaam" name="usn" value='<?= isset($usn)?$usn:"";?>' required="required"/>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="password" autocomplete="off" name="ww" placeholder="wachtwoord" required="required"/>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <input type="submit" value="inloggen"/>
-                  <input type="reset" value="reset"/>
-                </td>
-              </tr>
-            </table>
-          </form>
+          <?php
+            if ($typegebruiker !== 'bezoeker') {
+              echo '<a href="?control='.$typegebruiker.'&action=logout">uitloggen</a>';
+            } else {
+              echo "
+              <form method='POST' autocomplete='off'>
+                <table>
+                  <tr>
+                    <td>
+                      <input type='text' autocomplete='off' placeholder='gebruikersnaam' name='usn' required/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type='password' autocomplete='off' name='ww' placeholder='wachtwoord' required/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan='2'>
+                      <input type='submit' value='inloggen'/>
+                      <input type='reset' value='reset'/>
+                    </td>
+                  </tr>
+                </table>
+              </form>";
+            }
+          ?>
         </section>
       </div>
       <div class="nav">
         <ul>
-          <li><a href="?control=bezoeker&action=default">Home</a></li>
-          <li><a href="?control=bezoeker&action=trainings">Trainings Aanbod</a></li>
-          <li><a href="?control=bezoeker&action=register">Lid worden</a></li>
-          <li><a href="?control=bezoeker&action=gedragsregels">Gedragsregels</a></li>
-          <li><a href="?control=bezoeker&action=contact">Locatie & contact</a></li>
+          <?php
+            switch($typegebruiker) {
+              case 'bezoeker':
+                echo '
+                <li><a href="?control=bezoeker&action=default">Home</a></li>
+                <li><a href="?control=bezoeker&action=trainings">Trainings Aanbod</a></li>
+                <li><a href="?control=bezoeker&action=register">Lid worden</a></li>
+                <li><a href="?control=bezoeker&action=gedragsregels">Gedragsregels</a></li>
+                <li><a href="?control=bezoeker&action=contact">Locatie & contact</a></li>
+                ';
+                break;
+              case 'lid':
+                echo '
+                <li><a href="?control=lid&action=default">Home</a></li>
+                <li><a href="?control=lid&action=inschrijven">Inschrijven</a></li>
+                <li><a href="?control=lid&action=lidBeheer">Lid beheer</a></li>
+                <li><a href="?control=lid&action=overzicht">Overzicht</a></li>';
+                break;
+              case 'instructeur':
+                echo '
+                <li><a href="?control=instructeur&action=default">Home</a></li>
+                <li><a href="?control=instructeur&action=beheerGebruikers">Gebruikers beheer</a></li>';
+                break;
+            }
+          ?>
         </ul>
       </div>

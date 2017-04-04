@@ -17,7 +17,6 @@ class BezoekerModel extends AbstractModel {
             if(count($result)===1){
                 $this->startSession();
                 $_SESSION['gebruiker']=$result[0];
-                echo "<pre>".var_export($_SESSION, true)."</pre>";
                 return REQUEST_SUCCESS;
             }
             return REQUEST_FAILURE_DATA_INVALID;
