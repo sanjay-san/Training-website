@@ -10,5 +10,15 @@ namespace php\models;
 
 
 class InstructeurModel extends AbstractModel {
+    public function getGebruikers(){
 
+        $sql= "SELECT * FROM persons";
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+        return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Persoon');
+    }
+
+    public function verwijderGebruiker(){
+
+    }
 }
