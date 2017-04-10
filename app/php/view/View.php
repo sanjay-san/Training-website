@@ -18,9 +18,7 @@ class View {
    * draagt een naam waarde paar over aan de view ter expressie in de template;
    */
   public function set($naam, $waarde) {
-    if(!isset(View::$data[$naam])) {
-      self::$data[$naam] = $waarde;
-    }
+    self::$data[$naam] = $waarde;
   }
 
   /**

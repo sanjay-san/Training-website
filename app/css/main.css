@@ -2,3 +2,61 @@
   margin: 0px auto;
   padding: 0px auto;
 }
+
+.wrapper {
+  font-family: Helvetica;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid #000;
+  /*width: 760px;*/
+  height: 780px;
+  margin-top: 3%;
+}
+
+.header {
+  border-bottom: 1px solid #000;
+  height: 150px;
+  padding: 20px;
+}
+
+.logo {
+  float: left;
+}
+
+.login {
+  float: right;
+}
+
+.content {
+  height: 476px;
+  padding: 20px;
+}
+
+.footer {
+  float: left;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(red, blue); /* Standard syntax */
+  width: 100%;
+}
+
+.footer table tr:nth-child(2) {
+  color: #fff;
+}
+
+.logo img {
+  width: 164px;
+  height: 110px;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.nav ul li {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}

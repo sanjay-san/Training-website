@@ -2,7 +2,9 @@
   include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/header.php";
 ?>
 
-hello there, i am the bezoeker default.php
+<div class="content">
+   <h1>Gedragsregels Content</h1>
+</div>
 
 <?php
   include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/footer.php";

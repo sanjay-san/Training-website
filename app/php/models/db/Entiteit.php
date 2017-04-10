@@ -18,8 +18,9 @@ abstract class Entiteit {
     $methodeType = substr($methodeNaam, 0, 3);
     $eigenschap = lcfirst(substr($methodeNaam, 3));
     $aantalArgumenten = count($args);
-
-    if(!property_exists($this, $eigenschap)) {
+if(!property_exists($this, $eigenschap)) {
+        echo $methodeNaam;
+        echo $eigenschap;
       throw new ERROR\FrameworkException("de eigenschap $eigenschap bestaat helemaal niet!!");
     }
 
