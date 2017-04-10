@@ -34,10 +34,16 @@
                 <td><?= $gebruiker->getPlace();?></td>
                 <td><?= $gebruiker->getRole();?></td>
 
-                <td><a href='?control=medewerker&action=updatesoort&id=<?= $soortactiviteit->getId();?>'><img src="img/bewerk.png"></a></td>
-                <td><a href='?control=medewerker&action=deletesoort&id=<?= $soortactiviteit->getId();?>'><img src="img/verwijder.png"></a></td>
+                <td><a href='?control=instructeur&action=updategebruiker&id=<?= $gebruiker->getId();?>'>bewerk</a></td>
+                <td><a href='?control=instructeur&action=deletegebruiker&id=<?= $gebruiker->getId();?>'>verwijder</a></td>
             </tr>
             <?php endforeach;?>
+        <td>
+            <tr>
+                <td>
+                    <a href="?control=instructeur&action=addgebruiker">nieuwe gebruiker</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

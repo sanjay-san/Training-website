@@ -1,5 +1,5 @@
 <?php
-const BASE_NAMESPACE ='php\\';
+const BASE_NAMESPACE ='codeproduction\\';
 const DATA_SOURCE_NAME =  'mysql:dbname=training;host=127.0.0.1;charset=utf8';
 const DB_USERNAME = 'root';
 const DB_PASSWORD = '';
