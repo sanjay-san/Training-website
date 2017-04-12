@@ -15,7 +15,7 @@ class InstructeurModel extends AbstractModel {
         parent::__construct($control, $action);
     }
     public function getGebruikers(){
-        $sql= "SELECT * FROM persons";
+        $sql= "SELECT * FROM persons WHERE role='instructeur'";
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Persoon');
@@ -31,6 +31,26 @@ class InstructeurModel extends AbstractModel {
         $gebruiker = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Persoon');
         return  $gebruiker[0];
     }
+
+    public function getLesById(){
+        $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
+
+        $sql="SELECT * FROM lessons WHERE id=:id";
+        $sth= $this->dbh->prepare($sql);
+        $sth->bindParam(':id',$id);
+        $sth->execute();
+        $les = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
+        return  $les[0];
+    }
+
+    public function getTraining(){
+        $sql="SELECT * FROM trainings";
+        $sth= $this->dbh->prepare($sql);
+        $sth->execute();
+        $trainingnamen = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Training');
+        return $trainingnamen;
+    }
+
     public function verwijderGebruiker(){
         $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
 
@@ -48,6 +68,7 @@ class InstructeurModel extends AbstractModel {
 
 
     }
+
 
     public function addGebruiker(){
         $login   = filter_input(INPUT_POST, 'usn');
@@ -154,6 +175,95 @@ class InstructeurModel extends AbstractModel {
         }
         return REQUEST_NOTHING_CHANGED;
 
+
+    }
+    public function lessonOverzicht(){
+        $sql = "SELECT  lessons.id, lessons.time, 
+                        lessons.date, lessons.location,
+                        lessons.max_persons, 
+                        trainings.description, trainings.duration, 
+                        trainings.extra_costs, 
+                        registrations.member_id, 
+                COUNT(lessons.id) AS 'aanmeldingen'
+                FROM `lessons` 
+                join trainings on lessons.training_id = trainings.id 
+                JOIN registrations on lessons.id = registrations.lesson_id 
+                GROUP BY lessons.id";
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+        return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
+    }
+    public function  updateles(){
+        $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
+
+        $datum  = filter_input(INPUT_POST, 'datum');
+        $tijd   = filter_input(INPUT_POST, 'time');
+        $tipe   = filter_input(INPUT_POST, 'tipe');
+        $maximum= filter_input(INPUT_POST, 'maximum');
+
+        $sql=  "UPDATE lessons 
+                SET `date`=:datum,`time`=:tijd, max_persons=:maximum, training_id=:tipe 
+                WHERE id=:id";
+
+        $stmnt = $this->dbh->prepare($sql);
+        $stmnt->bindParam(':id',$id);
+        $stmnt->bindParam(':datum', $datum);
+        $stmnt->bindParam(':tijd', $tijd);
+        $stmnt->bindParam(':tipe', $tipe);
+        $stmnt->bindParam(':maximum',$maximum);
+
+        try {
+            $stmnt->execute();
+        }
+        catch(\PDOEXception $e) {
+            echo "<pre>";
+            echo $e;
+            return REQUEST_FAILURE_DATA_INVALID;
+            echo "</pre>";
+        }
+
+        $aantalGewijzigd = $stmnt->rowCount();
+        if($aantalGewijzigd===1) {
+            return REQUEST_SUCCESS;
+        }
+        return REQUEST_NOTHING_CHANGED;
+
+    }
+
+    public function verwijderLes(){
+        $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
+
+        if($id===null) {
+            return REQUEST_FAILURE_DATA_INCOMPLETE;
+        }
+        if($id===false) {
+            return REQUEST_FAILURE_DATA_INVALID;
+        }
+
+        $sql= "DELETE FROM lessons WHERE id=:id";
+        $sth= $this->dbh->prepare($sql);
+        $sth->bindParam(':id',$id);
+        $sth->execute();
+    }
+
+    public function  getAlleDeelnemers(){
+        $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
+
+              $sql="SELECT    lessons.id AS 'lessonid', 
+                        persons.firstname AS 'firstname',
+                        persons.preprovision AS 'preprovision',
+                        persons.lastname AS 'lastname',
+                        trainings.description AS 'trainingsnaam'
+                        FROM `lessons` 
+                        join registrations on registrations.lesson_id = lessons.id 
+                        join persons on registrations.member_id = persons.id 
+                        JOIN trainings on lessons.training_id = trainings.id 
+                        WHERE lessons.id=:id";
+        $sth= $this->dbh->prepare($sql);
+        $sth->bindParam(':id',$id);
+        $sth->execute();
+        $deelnemers = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
+        return $deelnemers;
 
     }
 }
