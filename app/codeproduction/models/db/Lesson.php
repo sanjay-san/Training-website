@@ -16,4 +16,10 @@ class Lesson extends Entiteit {
     protected $max_persons;
     protected $training_id;
     protected $instructor_id;
+
+    /*enkel voor binnen de sql*/
+    protected $description;
+    protected $duration;
+    protected $extra_costs;
+    protected $aanmeldingen;
 }

@@ -66,6 +66,12 @@
               case 'instructeur':
                 echo '
                 <li><a href="?control=instructeur&action=default">Home</a></li>
+                <li><a href="?control=instructeur&action=lessenoverzicht">Lessen overzicht</a></li>
+                <li><a href="?control=instructeur&action=beheerGebruikers">Instructeur beheer</a></li>';
+                break;
+              case 'admin':
+                echo '
+                <li><a href="?control=instructeur&action=default">Home</a></li>
                 <li><a href="?control=instructeur&action=beheerGebruikers">Gebruikers beheer</a></li>';
                 break;
             }
