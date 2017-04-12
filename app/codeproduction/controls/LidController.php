@@ -1,8 +1,13 @@
 <?php
-namespace php\controls;
-use php\error as ERROR;
+namespace codeproduction\controls;
 
-class LidController extends AbstractController{
+use \php\error as ERROR;
+use \php\controls\AbstractController as AbstractController;
+
+class LidController extends AbstractController {
+    public function __construct($control, $action){
+        parent::__construct($control, $action);
+    }
 
 // kan de defaultAction niet in de AbstractController gezet worden?
   public function defaultAction() {

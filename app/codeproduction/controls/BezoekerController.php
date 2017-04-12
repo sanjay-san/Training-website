@@ -1,8 +1,13 @@
 <?php
-namespace php\controls;
-use php\error as ERROR;
+namespace codeproduction\controls;
+
+use \php\error as ERROR;
+use \php\controls\AbstractController as AbstractController;
 
 class BezoekerController extends AbstractController {
+    public function __construct($control, $action){
+        parent::__construct($control, $action);
+    }
     public function defaultAction() {
       $typegebruiker = $this->model->getGebruikerRecht();
       $this->view->set('typegebruiker', $typegebruiker);

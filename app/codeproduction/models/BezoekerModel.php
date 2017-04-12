@@ -1,7 +1,12 @@
 <?php
-namespace php\models;
+namespace codeproduction\models;
 
-class BezoekerModel extends AbstractModel {
+use \php\models\AbstractModel as AbstractModel;
+
+class BezoekerModel extends  AbstractModel{
+   public function __construct($control, $action){
+        parent::__construct($control, $action);
+    }
     public function controleerInloggen(){
         $usn=   filter_input(INPUT_POST,'usn');
         $ww=    filter_input(INPUT_POST,'ww');

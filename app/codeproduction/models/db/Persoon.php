@@ -4,7 +4,8 @@
  * Date: 29-3-2017
  * Time: 12:46
  */
-namespace php\models\db;
+namespace codeproduction\models\db;
+use \php\models\db\Entiteit as Entiteit;
 class Persoon extends Entiteit{
     protected $id;
     protected $loginname;
