@@ -73,12 +73,6 @@ include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/includ
           </td>
         </tr>
         <tr>
-          <td>
-            <input type="hidden" placeholder="salaris" name="salaris"
-                   value="<?= !empty($gebruiker->getSalary())?$gebruiker->getSalary():'';?>">
-          </td>
-        </tr>
-        <tr>
           <td>straat</td>
           <td>
             <input type="text" placeholder="straatnaam" name="straat"

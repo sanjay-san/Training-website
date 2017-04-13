@@ -20,7 +20,6 @@ class LidModel extends AbstractModel {
         $gender = filter_input(INPUT_POST, 'formGender');
         $email = filter_input(INPUT_POST, 'email');
         $hire_date = filter_input(INPUT_POST, 'fwd');
-        $salary = filter_input(INPUT_POST, 'salaris');
         $street = filter_input(INPUT_POST, 'straat');
         $postalcode = filter_input(INPUT_POST, 'postcode');
         $place = filter_input(INPUT_POST, 'stad');
@@ -33,13 +32,12 @@ class LidModel extends AbstractModel {
                                     lastname=:lastname,
                                     dateofbirth=:dateofbirth,
                                     gender=:gender,
-                                    emailaddress=:email,  
+                                    emailaddress=:email,
                                     hire_date=:hire_date,
-                                    salary=:salary, 
                                     street=:street,
                                     postal_code=:postalcode,
                                     place=:place
-                                    /*,role=:role*/
+
                                WHERE `persons`.`id` = :id";
         $stmnt = $this->dbh->prepare($sql);
         $gebruiker = $this->getGebruiker();
@@ -54,7 +52,6 @@ class LidModel extends AbstractModel {
         $stmnt->bindParam(':gender', $gender);
         $stmnt->bindParam(':email', $email);
         $stmnt->bindParam(':hire_date', $hire_date);
-        $stmnt->bindParam(':salary', $salary);
         $stmnt->bindParam(':street', $street);
         $stmnt->bindParam(':postalcode', $postalcode);
         $stmnt->bindParam(':place', $place);
@@ -69,6 +66,65 @@ class LidModel extends AbstractModel {
             echo "</pre>";
         }
 
+    }
+
+    public function getOverzicht()
+    {
+      $sql='SELECT DATE_FORMAT(lessons.date, "%Y-%m-%d") as `date`,
+                   DATE_FORMAT(lessons.time,"%H:%i") as `time`,
+                  lessons.max_persons as`max_persons`,
+                  lessons.training_id as `training_id`
+                  trainings.description,
+                  trainings.duration,
+                  trainings.extra_costs,
+                  registrations.member_id,
+                  COUNT(lesson.id) as `aanmeldingen`
+             FROM `lessons`
+             JOIN trainings on lessons.training_id = trainings.id
+             JOIN registrations on lessons.id = registrations.lesson_id
+             GROUP BY lessons.id
+             WHERE registrations.member_id= :id
+             AND `lessons`.datum > CURDATE()';
+
+       $gebruiker = $this->getGebruiker();
+       $id=$gebruiker->getId();
+
+       $stmnt = $this->dbh->prepare($sql);
+       $stmnt->bindParam(':id',$id );
+       $stmnt->execute();
+       $getOverzicht = $stmnt->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
+       return $getOverzicht;
+    }
+
+    public function getRegistraties() {
+      $id = $this->getGebruiker()->getId();
+      $stmnt = $this->dbh->prepare("
+        SELECT DATE_FORMAT(l.date, '%Y-%m-%d') as 'date', DATE_FORMAT(l.time, '%H:%i') as 'time', l.max_persons as 'max_persons', l.training_id as 'training_id', t.description as 'description',
+        t.duration as 'duration', t.extra_costs as 'extra_costs', r.member_id as 'member_id'
+        FROM registrations r
+        INNER JOIN lessons l ON r.lesson_id = l.id
+        INNER JOIN trainings t ON l.training_id = t.id
+        WHERE member_id = :id;
+      ");
+      $stmnt->bindParam(':id', $id);
+      $stmnt->execute();
+      return $stmnt->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__.'\db\Lesson');
+    }
+
+    public function verwijderLes(){
+        $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
+
+        if($id===null) {
+            return REQUEST_FAILURE_DATA_INCOMPLETE;
+        }
+        if($id===false) {
+            return REQUEST_FAILURE_DATA_INVALID;
+        }
+
+        $sql= "DELETE FROM lessons WHERE id=:id";
+        $stmnt= $this->dbh->prepare($sql);
+        $stmnt->bindParam(':id',$id);
+        $stmnt->execute();
     }
 
     public function getGebruikerById(){
