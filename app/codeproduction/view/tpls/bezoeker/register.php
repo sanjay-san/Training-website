@@ -60,7 +60,7 @@
           <span>Geboorte dag:</span>
         </td>
         <td>
-          <input type="text" name="dateofbirth" placeholder="geboortedag" required="required" value="<?= !empty($form_data['dateofbirth'])?$form_data['dateofbirth']:'';?>"/>
+          <input type="text" name="dateofbirth" placeholder="jaar/maand/dag" required="required" value="<?= !empty($form_data['dateofbirth'])?$form_data['dateofbirth']:'';?>"/>
         </td>
       </tr>
       <tr>

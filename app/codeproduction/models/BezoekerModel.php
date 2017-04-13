@@ -33,23 +33,23 @@ class BezoekerModel extends  AbstractModel{
     public function registreren()
     {
        $loginname= filter_input(INPUT_POST, 'loginname');
-       $firstname= filter_input(INPUT_POST, 'firstname');
        $password= filter_input(INPUT_POST, 'password');
-       $lastname=filter_input(INPUT_POST, 'lastname');
+       $firstname= filter_input(INPUT_POST, 'firstname');
        $preprovision=filter_input(INPUT_POST, 'preprovision');
+       $lastname=filter_input(INPUT_POST, 'lastname');
        $gender=filter_input(INPUT_POST, 'gender');
        $dateofbirth=filter_input(INPUT_POST,'dateofbirth');
-       $emailaddress=filter_input(INPUT_POST,'emailaddress',FILTER_VALIDATE_EMAIL);
+       $email=filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
        $street=filter_input(INPUT_POST,'street');
        $postalcode=filter_input(INPUT_POST,'postalcode');
-       $place=filter_input(INPUT_POST,'place');
+      /* $place=filter_input(INPUT_POST,'place');*/
 
-       if($firstname===null || $password===null || $lastname===null || $gender===null ||$dateofbirth===null ||$emailaddress===null){
+       if($firstname===null || $password===null || $lastname===null || $gender===null ||$dateofbirth===null ||$email===null){
          return REQUEST_FAILURE_DATA_INCOMPLETE;
        }
 
        $sql=   "INSERT INTO `persons`  (loginname,firstname,password,preprovision,lastname,dateofbirth,gender,emailaddress,postal_code,street,role)
-       VALUES (:loginname,:firstname,:password,:preprovision,:lastname,:dateofbirth,:gender,:emailaddress,:postal_code,:street,'lid') ";
+       VALUES (:loginname,:firstname,:password,:preprovision,:lastname,:dateofbirth,:gender,:email,:postalcode,:street,'lid') ";
 
        $stmnt = $this->dbh->prepare($sql);
        $stmnt->bindParam(':loginname', $loginname);
@@ -60,9 +60,9 @@ class BezoekerModel extends  AbstractModel{
        $stmnt->bindParam(':gender', $gender);
        $stmnt->bindParam(':dateofbirth', $dateofbirth);
        $stmnt->bindParam(':street', $street);
-       $stmnt->bindParam(':emailaddress', $emailaddress);
+       $stmnt->bindParam(':email', $email);
        $stmnt->bindParam(':postalcode', $postalcode);
-       $stmnt->bindParam(':place', $place);
+      /* $stmnt->bindParam(':place', $place);*/
 
        try{
          $stmnt->execute();
