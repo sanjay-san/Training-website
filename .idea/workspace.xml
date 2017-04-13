@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e862b96b-b130-49bf-99d9-4e859da34c6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/codeproduction/controls/LidController.php" afterPath="$PROJECT_DIR$/app/codeproduction/controls/LidController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/codeproduction/models/BezoekerModel.php" afterPath="$PROJECT_DIR$/app/codeproduction/models/BezoekerModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php" afterPath="$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/codeproduction/models/LidModel.php" afterPath="$PROJECT_DIR$/app/codeproduction/models/LidModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/codeproduction/view/tpls/lid/lidBeheer.php" afterPath="$PROJECT_DIR$/app/codeproduction/view/tpls/lid/lidBeheer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/codeproduction/view/tpls/lid/overzicht.php" afterPath="$PROJECT_DIR$/app/codeproduction/view/tpls/lid/overzicht.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/php/config.php" afterPath="$PROJECT_DIR$/app/php/config.php" />
     </list>
     <ignored path="Training-website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,21 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/include/header.php">
+      <file leaf-file-name="InstructeurController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/InstructeurController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="63" column="79" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
+            <state relative-caret-position="554">
+              <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="42" />
               <folding>
-                <marker date="1492070765532" expanded="true" signature="668:1386" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="692:1364" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="715:901" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="740:877" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="924:1109" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="949:1085" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="1132:1339" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="1169:1315" ph="..." />
-                <marker date="1492070765532" expanded="true" signature="2372:2455" ph="..." />
+                <element signature="e#42#66#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,30 +41,40 @@
       <file leaf-file-name="InstructeurModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1196">
-              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+            <state relative-caret-position="414">
+              <caret line="191" column="35" selection-start-line="191" selection-start-column="35" selection-end-line="191" selection-end-column="35" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
-                <marker date="1492003613237" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
-                <marker date="1492003613237" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
-                <marker date="1492003613237" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
-                <marker date="1492003613237" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
-                <marker date="1492003613237" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
-                <marker date="1492003613237" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
-                <marker date="1492003613237" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
-                <marker date="1492003613237" expanded="true" signature="1881:1913" ph="DELETE FROM " />
-                <marker date="1492003613237" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
-                <marker date="1492003613237" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
-                <marker date="1492003613237" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
-                <marker date="1492003613237" expanded="true" signature="6638:6735" ph="..." />
-                <marker date="1492003613237" expanded="true" signature="6981:7549" ph="SELECT lesso... lessons" />
-                <marker date="1492003613237" expanded="true" signature="6981:7592" ph="SELECT lesso... lessons" />
-                <marker date="1492003613237" expanded="true" signature="8030:8163" ph="UPDATE lesso... " />
-                <marker date="1492003613237" expanded="true" signature="8540:8637" ph="..." />
-                <marker date="1492003613237" expanded="true" signature="9116:9148" ph="DELETE FROM " />
-                <marker date="1492003613237" expanded="true" signature="9386:9987" ph="SELECT lesso... lessons" />
-                <marker date="1492003613237" expanded="true" signature="9386:9990" ph="SELECT lesso... lessons" />
+                <marker date="1492079403358" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
+                <marker date="1492079403358" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
+                <marker date="1492079403358" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
+                <marker date="1492079403358" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
+                <marker date="1492079403358" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
+                <marker date="1492079403358" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
+                <marker date="1492079403358" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
+                <marker date="1492079403358" expanded="true" signature="1881:1913" ph="DELETE FROM " />
+                <marker date="1492079403358" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
+                <marker date="1492079403358" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
+                <marker date="1492079403358" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
+                <marker date="1492079403358" expanded="true" signature="6638:6735" ph="..." />
+                <marker date="1492079403358" expanded="true" signature="6982:7550" ph="SELECT lesso... lessons" />
+                <marker date="1492079403358" expanded="true" signature="6982:7593" ph="SELECT lesso... lessons" />
+                <marker date="1492079403358" expanded="true" signature="8032:8165" ph="UPDATE lesso... " />
+                <marker date="1492079403358" expanded="true" signature="8542:8639" ph="..." />
+                <marker date="1492079403358" expanded="true" signature="9118:9150" ph="DELETE FROM " />
+                <marker date="1492079403358" expanded="true" signature="9388:9989" ph="SELECT lesso... lessons" />
+                <marker date="1492079403358" expanded="true" signature="9388:9992" ph="SELECT lesso... lessons" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LidController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/LidController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,56 +82,15 @@
       <file leaf-file-name="LidModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/codeproduction/models/LidModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
+            <state relative-caret-position="294">
+              <caret line="88" column="62" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
               <folding>
-                <marker date="1492071886578" expanded="true" signature="1078:1898" ph="UPDATE `pers... " />
-                <marker date="1492071886578" expanded="true" signature="1825:1840" ph="/*,role=:rol... " />
-                <marker date="1492071886578" expanded="true" signature="3165:3199" ph="SELECT * FRO... persons" />
+                <marker date="1492081402527" expanded="true" signature="1078:1898" ph="UPDATE `pers... " />
+                <marker date="1492081402527" expanded="true" signature="1825:1840" ph="/*,role=:rol... " />
+                <marker date="1492081402527" expanded="true" signature="3165:3199" ph="SELECT * FRO... persons" />
+                <marker date="1492081402527" expanded="true" signature="3481:3951" ph="SELECT lesso... lessons" />
+                <marker date="1492081402527" expanded="true" signature="4471:4562" ph="INSERT INTO `registrations`... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/php/models/AbstractModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BezoekerModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/codeproduction/models/BezoekerModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1308">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding>
-                <marker date="1492070525968" expanded="true" signature="441:504" ph="SELECT * FRO... persons" />
-                <marker date="1492070525968" expanded="true" signature="1917:2174" ph="INSERT INTO `persons`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updategebruiker.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/updategebruiker.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2142">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beheerGebruikers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/beheerGebruikers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="36" column="102" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="102" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -140,8 +98,8 @@
       <file leaf-file-name="overzicht.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/lid/overzicht.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="286">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -157,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LidController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/LidController.php">
+      <file leaf-file-name="lessenoverzicht.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/lessenoverzicht.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+            <state relative-caret-position="416">
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -207,15 +165,15 @@
         <option value="$PROJECT_DIR$/app/codeproduction/models/db/Lesson.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/updateles.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/controls/InstructeurController.php" />
-        <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/lessenoverzicht.php" />
-        <option value="$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/deelnemers.php" />
         <option value="$PROJECT_DIR$/app/php/config.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/models/BezoekerModel.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/include/header.php" />
-        <option value="$PROJECT_DIR$/app/codeproduction/models/LidModel.php" />
-        <option value="$PROJECT_DIR$/app/codeproduction/controls/LidController.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/lid/lidBeheer.php" />
+        <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/lessenoverzicht.php" />
+        <option value="$PROJECT_DIR$/app/codeproduction/controls/LidController.php" />
+        <option value="$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php" />
+        <option value="$PROJECT_DIR$/app/codeproduction/models/LidModel.php" />
         <option value="$PROJECT_DIR$/app/codeproduction/view/tpls/lid/overzicht.php" />
       </list>
     </option>
@@ -627,18 +585,18 @@
       <workItem from="1491830060956" duration="2139000" />
       <workItem from="1491844476530" duration="2398000" />
       <workItem from="1491980049284" duration="13918000" />
-      <workItem from="1492067346230" duration="4967000" />
+      <workItem from="1492067346230" duration="9915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63573000" />
+    <option name="totallyTimeSpent" value="68521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23254564" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -706,25 +664,25 @@
           <caret line="12" column="33" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="33" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1492003613237" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
-            <marker date="1492003613237" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
-            <marker date="1492003613237" expanded="true" signature="1881:1913" ph="DELETE FROM " />
-            <marker date="1492003613237" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
-            <marker date="1492003613237" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
-            <marker date="1492003613237" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
-            <marker date="1492003613237" expanded="true" signature="6638:6735" ph="..." />
-            <marker date="1492003613237" expanded="true" signature="6981:7549" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="6981:7592" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="8030:8163" ph="UPDATE lesso... " />
-            <marker date="1492003613237" expanded="true" signature="8540:8637" ph="..." />
-            <marker date="1492003613237" expanded="true" signature="9116:9148" ph="DELETE FROM " />
-            <marker date="1492003613237" expanded="true" signature="9386:9987" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="9386:9990" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
+            <marker date="1492079403358" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
+            <marker date="1492079403358" expanded="true" signature="1881:1913" ph="DELETE FROM " />
+            <marker date="1492079403358" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
+            <marker date="1492079403358" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
+            <marker date="1492079403358" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
+            <marker date="1492079403358" expanded="true" signature="6638:6735" ph="..." />
+            <marker date="1492079403358" expanded="true" signature="6982:7550" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="6982:7593" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="8032:8165" ph="UPDATE lesso... " />
+            <marker date="1492079403358" expanded="true" signature="8542:8639" ph="..." />
+            <marker date="1492079403358" expanded="true" signature="9118:9150" ph="DELETE FROM " />
+            <marker date="1492079403358" expanded="true" signature="9388:9989" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="9388:9992" ph="SELECT lesso... lessons" />
           </folding>
         </state>
       </provider>
@@ -822,25 +780,25 @@
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1492003613237" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
-            <marker date="1492003613237" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
-            <marker date="1492003613237" expanded="true" signature="1881:1913" ph="DELETE FROM " />
-            <marker date="1492003613237" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
-            <marker date="1492003613237" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
-            <marker date="1492003613237" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
-            <marker date="1492003613237" expanded="true" signature="6638:6735" ph="..." />
-            <marker date="1492003613237" expanded="true" signature="6981:7549" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="6981:7592" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="8030:8163" ph="UPDATE lesso... " />
-            <marker date="1492003613237" expanded="true" signature="8540:8637" ph="..." />
-            <marker date="1492003613237" expanded="true" signature="9116:9148" ph="DELETE FROM " />
-            <marker date="1492003613237" expanded="true" signature="9386:9987" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="9386:9990" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
+            <marker date="1492079403358" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
+            <marker date="1492079403358" expanded="true" signature="1881:1913" ph="DELETE FROM " />
+            <marker date="1492079403358" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
+            <marker date="1492079403358" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
+            <marker date="1492079403358" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
+            <marker date="1492079403358" expanded="true" signature="6638:6735" ph="..." />
+            <marker date="1492079403358" expanded="true" signature="6982:7550" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="6982:7593" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="8032:8165" ph="UPDATE lesso... " />
+            <marker date="1492079403358" expanded="true" signature="8542:8639" ph="..." />
+            <marker date="1492079403358" expanded="true" signature="9118:9150" ph="DELETE FROM " />
+            <marker date="1492079403358" expanded="true" signature="9388:9989" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="9388:9992" ph="SELECT lesso... lessons" />
           </folding>
         </state>
       </provider>
@@ -925,14 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/lessenoverzicht.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="24" column="85" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1027,13 +977,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/InstructeurController.php">
+    <entry file="file://$PROJECT_DIR$/app/php/models/AbstractModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1734">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="e#42#66#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="250">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,51 +992,6 @@
           <folding>
             <marker date="1492070525968" expanded="true" signature="441:504" ph="SELECT * FRO... persons" />
             <marker date="1492070525968" expanded="true" signature="1917:2174" ph="INSERT INTO `persons`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/beheerGebruikers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="36" column="102" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/php/models/AbstractModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1196">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1492003613237" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
-            <marker date="1492003613237" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
-            <marker date="1492003613237" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
-            <marker date="1492003613237" expanded="true" signature="1881:1913" ph="DELETE FROM " />
-            <marker date="1492003613237" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
-            <marker date="1492003613237" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
-            <marker date="1492003613237" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
-            <marker date="1492003613237" expanded="true" signature="6638:6735" ph="..." />
-            <marker date="1492003613237" expanded="true" signature="6981:7549" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="6981:7592" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="8030:8163" ph="UPDATE lesso... " />
-            <marker date="1492003613237" expanded="true" signature="8540:8637" ph="..." />
-            <marker date="1492003613237" expanded="true" signature="9116:9148" ph="DELETE FROM " />
-            <marker date="1492003613237" expanded="true" signature="9386:9987" ph="SELECT lesso... lessons" />
-            <marker date="1492003613237" expanded="true" signature="9386:9990" ph="SELECT lesso... lessons" />
           </folding>
         </state>
       </provider>
@@ -1111,31 +1014,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/beheerGebruikers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="36" column="102" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/updategebruiker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2142">
+        <state relative-caret-position="-2124">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/codeproduction/models/LidModel.php">
+    <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/InstructeurController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
-          <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
+          <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="42" />
           <folding>
-            <marker date="1492071886578" expanded="true" signature="1078:1898" ph="UPDATE `pers... " />
-            <marker date="1492071886578" expanded="true" signature="1825:1840" ph="/*,role=:rol... " />
-            <marker date="1492071886578" expanded="true" signature="3165:3199" ph="SELECT * FRO... persons" />
+            <element signature="e#42#66#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/LidController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,10 +1048,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/instructeur/lessenoverzicht.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/codeproduction/controls/LidController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/codeproduction/models/InstructeurModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="191" column="35" selection-start-line="191" selection-start-column="35" selection-end-line="191" selection-end-column="35" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1492079403358" expanded="true" signature="377:398" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:410" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:422" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="377:423" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="698:732" ph="SELECT * FRO... persons" />
+            <marker date="1492079403358" expanded="true" signature="1071:1105" ph="SELECT * FRO... lessons" />
+            <marker date="1492079403358" expanded="true" signature="1368:1391" ph="SELECT * FRO... trainings" />
+            <marker date="1492079403358" expanded="true" signature="1881:1913" ph="DELETE FROM " />
+            <marker date="1492079403358" expanded="true" signature="2859:3217" ph="INSERT INTO `persons`... " />
+            <marker date="1492079403358" expanded="true" signature="4952:5772" ph="UPDATE `pers... " />
+            <marker date="1492079403358" expanded="true" signature="5699:5714" ph="/*,role=:rol... " />
+            <marker date="1492079403358" expanded="true" signature="6638:6735" ph="..." />
+            <marker date="1492079403358" expanded="true" signature="6982:7550" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="6982:7593" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="8032:8165" ph="UPDATE lesso... " />
+            <marker date="1492079403358" expanded="true" signature="8542:8639" ph="..." />
+            <marker date="1492079403358" expanded="true" signature="9118:9150" ph="DELETE FROM " />
+            <marker date="1492079403358" expanded="true" signature="9388:9989" ph="SELECT lesso... lessons" />
+            <marker date="1492079403358" expanded="true" signature="9388:9992" ph="SELECT lesso... lessons" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/codeproduction/models/LidModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="88" column="62" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
+          <folding>
+            <marker date="1492081402527" expanded="true" signature="1078:1898" ph="UPDATE `pers... " />
+            <marker date="1492081402527" expanded="true" signature="1825:1840" ph="/*,role=:rol... " />
+            <marker date="1492081402527" expanded="true" signature="3165:3199" ph="SELECT * FRO... persons" />
+            <marker date="1492081402527" expanded="true" signature="3481:3951" ph="SELECT lesso... lessons" />
+            <marker date="1492081402527" expanded="true" signature="4471:4562" ph="INSERT INTO `registrations`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/codeproduction/view/tpls/lid/overzicht.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="286">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>

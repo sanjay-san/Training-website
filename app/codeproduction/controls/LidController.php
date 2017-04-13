@@ -21,12 +21,14 @@ class LidController extends AbstractController {
 
     public function inschrijvenAction() {
         $this->gebruikerrecht();
-        echo 'hello lid inschrijven';
+
+
+
+
     }
 
     public function lidBeheerAction() {
         $this->gebruikerrecht();
-        echo 'hello lid lidbeheer';
 
         if($this->model->isPostLeeg()){
             echo 'vul de gegevens in';
@@ -56,6 +58,14 @@ class LidController extends AbstractController {
     public function overzichtAction(){
         $this->gebruikerrecht();;
         echo 'hello lid overzicht';
+
+        $lessen = $this->model->lessonOverzicht();
+        $this->view->set('lessen',$lessen);
+    }
+
+    public function  deelnemenAction(){
+        $this->model->deelnemerAanmelden();
+        $this->forward('overzicht');
     }
 
 }

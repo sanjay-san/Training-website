@@ -177,6 +177,7 @@ class InstructeurModel extends AbstractModel {
 
 
     }
+
     public function lessonOverzicht(){
         $sql = "SELECT  lessons.id, lessons.time, 
                         lessons.date, lessons.location,
@@ -193,6 +194,7 @@ class InstructeurModel extends AbstractModel {
         $sth->execute();
         return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
     }
+
     public function  updateles(){
         $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
 
