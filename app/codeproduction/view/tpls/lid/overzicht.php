@@ -1,11 +1,14 @@
 <?php
-  include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/header.php";
-?>
-
+/**
+ * Created by PhpStorm.
+ * User: Sasagar BV
+ * Date: 5-4-2017
+ * Time: 20:26
+ */
+include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/header.php"; ?>
 <div class="content">
-   <h1>Register Content</h1>
-</div>
+    <form  method="post" >
 
-<?php
-  include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/footer.php";
-?>
+    </form>
+</div>
+<?php include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/footer.php"; ?>

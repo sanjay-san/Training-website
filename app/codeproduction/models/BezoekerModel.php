@@ -78,4 +78,6 @@ class BezoekerModel extends  AbstractModel{
        }
        return REQUEST_NOTHING_CHANGED;
     }
+
+
 }
