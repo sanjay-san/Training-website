@@ -71,8 +71,10 @@
                 break;
               case 'admin':
                 echo '
-                <li><a href="?control=instructeur&action=default">Home</a></li>
-                <li><a href="?control=instructeur&action=beheerGebruikers">Gebruikers beheer</a></li>';
+                <li><a href="?control=admin&action=default">Home</a></li>
+                <li><a href="?control=admin&action=instructeurs">Instructeurs</a></li>
+                <li><a href="?control=admin&action=leden">Leden</a></li>
+                <li><a href="?control=admin&action=trainingsvormen">Trainingsvormen</a></li>';
                 break;
             }
           ?>

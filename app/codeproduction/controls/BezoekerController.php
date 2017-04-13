@@ -7,6 +7,8 @@ use \php\controls\AbstractController as AbstractController;
 class BezoekerController extends AbstractController {
     public function __construct($control, $action){
         parent::__construct($control, $action);
+        var_dump($this->control);
+        var_dump($this->action);
     }
     public function defaultAction() {
       $typegebruiker = $this->model->getGebruikerRecht();
