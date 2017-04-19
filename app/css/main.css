@@ -137,3 +137,18 @@ body>section>#content {
   padding: 1px;
 }
 /*////////////  end bezoeker registratie  //////////////*/
+/*////////////  instructeur  //////////////*/
+.space3 td{
+  padding: 10px;
+}
+
+.underline-gone a{
+    text-decoration: none;
+}
+
+.tableChange{
+  margin-left: -20px;
+  font-size: 13px;
+  text-align: left;
+}
+/*////////////  end instructeur  //////////////*/
