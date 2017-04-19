@@ -118,4 +118,20 @@ class InstructeurController extends AbstractController{
         $this->view->set('allegebruikers',$allegebruikers);
     }
 
+    public function addlesAction(){
+        $this->gebruikerrecht();
+        $instructeurs=$this->model->getGebruikers();
+        $this->view->set('instructeurs',$instructeurs);
+
+        $lesnamen=$this->model->getTraining();
+        $this->view->set('lesnamen',$lesnamen);
+
+        if($this->model->isPostLeeg()){
+            echo 'vul de gegevens in';
+        }
+        else {
+            $this->model->addles();
+        }
+    }
+
 }
