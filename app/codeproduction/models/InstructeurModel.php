@@ -177,6 +177,7 @@ class InstructeurModel extends AbstractModel {
 
 
     }
+
     public function lessonOverzicht(){
         $sql = "SELECT  lessons.id,
                         DATE_FORMAT(lessons.date, '%Y-%m-%d') as `date`,
@@ -195,6 +196,7 @@ class InstructeurModel extends AbstractModel {
         $sth->execute();
         return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
     }
+
     public function  updateles(){
         $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
 
@@ -266,6 +268,44 @@ class InstructeurModel extends AbstractModel {
         $sth->execute();
         $deelnemers = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
         return $deelnemers;
+
+    }
+
+    public function addles(){
+        $tijd       = filter_input(INPUT_POST, 'time');
+        $datum      = filter_input(INPUT_POST, 'datum');
+        $location   = filter_input(INPUT_POST, 'location');
+        $maximum    = filter_input(INPUT_POST, 'maximum');
+        $tipe       = filter_input(INPUT_POST, 'tipe');
+        $instructeur= filter_input(INPUT_POST,  'instructeur');
+
+        $sql="  INSERT INTO `lessons` (`id`, `time`, `date`, `location`, `max_persons`, `training_id`, `instructor_id`) 
+                VALUES (NULL, :tijd, :datum, :locatie, :maximum, :tipe, :instructeur);";
+
+
+        $stmnt = $this->dbh->prepare($sql);
+        $stmnt->bindParam(':tijd', $tijd);
+        $stmnt->bindParam(':datum', $datum);
+        $stmnt->bindParam(':locatie', $location);
+        $stmnt->bindParam(':maximum',$maximum);
+        $stmnt->bindParam(':tipe', $tipe);
+        $stmnt->bindParam(':instructeur',$instructeur);
+
+        try {
+            $stmnt->execute();
+        }
+        catch(\PDOEXception $e) {
+            echo "<pre>";
+            echo $e;
+            return REQUEST_FAILURE_DATA_INVALID;
+            echo "</pre>";
+        }
+
+        $aantalGewijzigd = $stmnt->rowCount();
+        if($aantalGewijzigd===1) {
+            return REQUEST_SUCCESS;
+        }
+        return REQUEST_NOTHING_CHANGED;
 
     }
 }

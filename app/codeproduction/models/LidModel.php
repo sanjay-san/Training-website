@@ -140,4 +140,49 @@ class LidModel extends AbstractModel {
         $gebruiker = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Persoon');
         return  $gebruiker[0];
     }
+
+    public function lessonOverzicht(){
+        $sql = "SELECT lessons.id, COUNT(lessons.id)AS  'aantalaangemeld', lessons.date, 
+                        lessons.location, lessons.max_persons, 
+                        trainings.description, trainings.duration, 
+                        trainings.extra_costs 
+                FROM `lessons` 
+                JOIN trainings on lessons.training_id = trainings.id
+                RIGHT JOIN registrations on lessons.id = registrations.lesson_id
+                GROUP BY lessons.id";
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+        return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
+    }
+
+    public function deelnemerAanmelden(){
+        $lesid  = filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
+        $id = $this->getGebruiker()->getId();
+        if($lesid===null)
+        {
+            return REQUEST_FAILURE_DATA_INCOMPLETE;
+        }
+        if($lesid===false)
+        {
+            return REQUEST_FAILURE_DATA_INVALID;
+        }
+
+        $sql="INSERT INTO `registrations` ( `member_id`, `lesson_id`) 
+              VALUES (:id, :lesid)";
+
+        $stmnt = $this->dbh->prepare($sql);
+        $stmnt->bindParam(':id', $id);
+        $stmnt->bindParam(':lesid', $lesid);
+
+
+        try {
+            $stmnt->execute();
+        } catch (\PDOEXception $e) {
+            echo "<pre>";
+            echo $e;
+            return REQUEST_FAILURE_DATA_INVALID;
+            echo "</pre>";
+        }
+
+    }
 }

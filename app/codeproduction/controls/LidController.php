@@ -50,14 +50,17 @@ class LidController extends AbstractController {
         $this->view->set('gebruiker',$gebruiker);
     }
 
-    public function overzichtAction()
-    {
-      $this->gebruikerrecht();
-      $gebruiker= $this->model->getGebruikerById();
-      $this->view->set('gebruiker',$gebruiker);
+    public function overzichtAction(){
+        $this->gebruikerrecht();;
+        echo 'hello lid overzicht';
 
-      $overzichten= $this->model->getRegistraties();
-      $this->view->set('overzichten',$overzichten);
+        $lessen = $this->model->lessonOverzicht();
+        $this->view->set('lessen',$lessen);
+    }
+
+    public function  deelnemenAction(){
+        $this->model->deelnemerAanmelden();
+        $this->forward('overzicht');
     }
 
     public function deletelesAction(){
