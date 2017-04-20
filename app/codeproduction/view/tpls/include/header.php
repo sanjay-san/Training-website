@@ -69,7 +69,7 @@
                 <li><a href="?control=instructeur&action=default">Home</a></li>
                 <li><a href="?control=instructeur&action=lessenoverzicht">Lessen overzicht</a></li>
                 <li><a href="?control=instructeur&action=beheerGebruikers">Instructeur beheer</a></li>
-              <li><a href="?control=instructeur&action=ledenbeheer">leden beheer</a></li>';
+                <li><a href="?control=instructeur&action=ledenbeheer">leden beheer</a></li>';
                     break;
                 case 'admin':
                     echo '
