@@ -16,14 +16,21 @@ class LidController extends AbstractController {
 // kan de defaultAction niet in de AbstractController gezet worden?
     public function defaultAction() {
         $this->gebruikerrecht();
+
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function inschrijvenAction() {
         $this->gebruikerrecht();
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function lidBeheerAction() {
         $this->gebruikerrecht();
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
 
         if($this->model->isPostLeeg()){
             $this->view->set('note', 'vul de gegevens in');
@@ -52,8 +59,8 @@ class LidController extends AbstractController {
 
     public function overzichtAction(){
         $this->gebruikerrecht();;
-        echo 'hello lid overzicht';
-
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
         $lessen = $this->model->lessonOverzicht();
         $this->view->set('lessen',$lessen);
     }
@@ -61,10 +68,11 @@ class LidController extends AbstractController {
     public function  deelnemenAction(){
         $this->model->deelnemerAanmelden();
         $this->forward('overzicht');
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function deletelesAction(){
-        $this->gebruikerrecht();
         $this->model->verwijderLes();
         $this->forward('overzichtInschrijving');
     }

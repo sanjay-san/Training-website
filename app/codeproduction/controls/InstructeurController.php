@@ -15,16 +15,19 @@ class InstructeurController extends AbstractController{
 
     public function defaultAction(){
         $this->gebruikerrecht();
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function beheerGebruikersAction(){
         $this->gebruikerrecht();
         $gebruikers = $this->model->getGebruikers();
         $this->view->set('gebruikers', $gebruikers);
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function deletegebruikerAction(){
-        $this->gebruikerrecht();
         $this->model->verwijderGebruiker();
         $this->forward('beheerGebruikers');
     }
@@ -33,6 +36,8 @@ class InstructeurController extends AbstractController{
         $this->gebruikerrecht();
         $gebruiker= $this->model->getGebruikerById();
         $this->view->set('gebruiker',$gebruiker);
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
 
         if($this->model->isPostLeeg()){
             echo 'vul de gegevens in';
@@ -59,19 +64,23 @@ class InstructeurController extends AbstractController{
 
     public function addgebruikerAction(){
         $this->gebruikerrecht();
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
+
         if($this->model->isPostLeeg()){
             echo 'vul de gegevens in';
         }
         else{
             $this->model->addGebruiker();
         }
-
     }
 
     public function lessenoverzichtAction(){
         $this->gebruikerrecht();
         $lessen= $this->model->lessonOverzicht();
         $this->view->set('lessen',$lessen);
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function updatelesAction(){
@@ -82,6 +91,9 @@ class InstructeurController extends AbstractController{
 
         $lesnamen=$this->model->getTraining();
         $this->view->set('lesnamen',$lesnamen);
+
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
 
         if($this->model->isPostLeeg()){
             echo 'vul de gegevens in';
@@ -107,19 +119,24 @@ class InstructeurController extends AbstractController{
     }
 
     public function deletelesAction(){
-        $this->gebruikerrecht();
         $this->model->verwijderLes();
         $this->forward('lessenoverzicht');
     }
 
     public function deelnemersAction(){
         $this->gebruikerrecht();
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
         $allegebruikers= $this->model->getAlleDeelnemers();
         $this->view->set('allegebruikers',$allegebruikers);
     }
 
     public function addlesAction(){
         $this->gebruikerrecht();
+
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
+
         $instructeurs=$this->model->getGebruikers();
         $this->view->set('instructeurs',$instructeurs);
 

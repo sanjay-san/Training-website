@@ -17,7 +17,9 @@
         <section class="login">
             <?php
             if ($typegebruiker !== 'bezoeker') {
-                echo '<a href="?control='.$typegebruiker.'&action=logout">uitloggen</a>';
+                echo '<a href="?control='.$typegebruiker.'&action=logout">uitloggen</a>';?>
+                <p>- <?php echo $typegebruiker;?> -</p>
+                <p>Welkom <?php echo $gebruikersnaam->getFirstname().' '.$gebruikersnaam->getLastname();?></p><?php
             } else {
                 echo "
               <form method='POST' autocomplete='off'>
