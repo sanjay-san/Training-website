@@ -12,25 +12,25 @@ include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/includ
                 <tr>
                     <td>Datum</td>
                     <td>
-                        <input type="text" placeholder="datum" name="datum"
+                        <input type="text" placeholder="Jaar/Maand/Dag" name="datum"
                                required="required" >
                     </td>
                 </tr>
                 <tr>
-                    <td>tijds duur</td>
-                    <td><input type="text" placeholder="time" name="time"
+                    <td>Tijds duur</td>
+                    <td><input type="text" placeholder="%Y-%m-%d %h:%i:%s.%f" name="time"
                                required="required" >
                     </td>
                 </tr>
                 <tr>
-                    <td>location</td>
+                    <td>Location</td>
                     <td>
-                        <input type="text" placeholder="datum" name="location"
+                        <input type="text" placeholder="Plaats" name="location"
                                 required="required">
                     </td>
                 </tr>
                 <tr>
-                    <td>training</td>
+                    <td>Training</td>
                     <td>
                         <select name="tipe">
 
@@ -41,13 +41,13 @@ include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/includ
                     </td>
                 </tr>
                 <tr>
-                    <td>max aantal deelnemers</td>
-                    <td><input type="text" placeholder="maximum" name="maximum"
+                    <td>Max aantal deelnemers</td>
+                    <td><input type="text" placeholder="Maximum" name="maximum"
                                required="required" >
                     </td>
                 </tr>
                 <tr>
-                    <td>instructeur</td>
+                    <td>Instructeur</td>
                     <td>
                         <select name="instructeur">
                             <?php foreach ($instructeurs as $instructeur):?>

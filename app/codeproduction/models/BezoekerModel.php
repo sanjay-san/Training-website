@@ -89,5 +89,11 @@ class BezoekerModel extends  AbstractModel{
        return REQUEST_NOTHING_CHANGED;
     }
 
-
+    public function getTraining(){
+        $sql="SELECT * FROM trainings";
+        $sth= $this->dbh->prepare($sql);
+        $sth->execute();
+        $trainingnamen = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Training');
+        return $trainingnamen;
+    }
 }

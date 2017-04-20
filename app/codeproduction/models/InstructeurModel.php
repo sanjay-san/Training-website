@@ -65,10 +65,7 @@ class InstructeurModel extends AbstractModel {
         $sth= $this->dbh->prepare($sql);
         $sth->bindParam(':id',$id);
         $sth->execute();
-
-
     }
-
 
     public function addGebruiker(){
         $login   = filter_input(INPUT_POST, 'usn');
@@ -168,14 +165,11 @@ class InstructeurModel extends AbstractModel {
             return REQUEST_FAILURE_DATA_INVALID;
             echo "</pre>";
         }
-
         $aantalGewijzigd = $stmnt->rowCount();
         if($aantalGewijzigd===1) {
             return REQUEST_SUCCESS;
         }
         return REQUEST_NOTHING_CHANGED;
-
-
     }
 
     public function lessonOverzicht(){
@@ -231,7 +225,6 @@ class InstructeurModel extends AbstractModel {
             return REQUEST_SUCCESS;
         }
         return REQUEST_NOTHING_CHANGED;
-
     }
 
     public function verwijderLes(){
@@ -268,20 +261,19 @@ class InstructeurModel extends AbstractModel {
         $sth->execute();
         $deelnemers = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
         return $deelnemers;
-
     }
 
     public function addles(){
-        $tijd       = filter_input(INPUT_POST, 'time');
         $datum      = filter_input(INPUT_POST, 'datum');
+        $tijd       = filter_input(INPUT_POST,'time');
+        //$tijd2      =$datum.' 00:'.$tijd.':00.000000';
         $location   = filter_input(INPUT_POST, 'location');
         $maximum    = filter_input(INPUT_POST, 'maximum');
         $tipe       = filter_input(INPUT_POST, 'tipe');
         $instructeur= filter_input(INPUT_POST,  'instructeur');
 
-        $sql="  INSERT INTO `lessons` (`id`, `time`, `date`, `location`, `max_persons`, `training_id`, `instructor_id`) 
+        $sql="  INSERT INTO `lessons` (`id`, `time`, `date`, `location`, `max_persons`, `training_id`, `instructor_id`)
                 VALUES (NULL, :tijd, :datum, :locatie, :maximum, :tipe, :instructeur);";
-
 
         $stmnt = $this->dbh->prepare($sql);
         $stmnt->bindParam(':tijd', $tijd);
