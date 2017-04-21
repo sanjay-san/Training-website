@@ -1,8 +1,5 @@
 <?php include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/header.php"; ?>
 <div class="content">
-  <?php
-    echo "<pre>".var_export($overzichten, true)."</pre>";
-  ?>
   <table>
     <thead>
       <tr>

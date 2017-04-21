@@ -63,6 +63,8 @@ class LidController extends AbstractController {
         $this->view->set('gebruikersnaam',$gebruikersnaam);
         $lessen = $this->model->lessonOverzicht();
         $this->view->set('lessen',$lessen);
+        $overzichten=$this->model->lessonOverzicht();
+        $this->view->set('overzichten',$overzichten);
     }
 
     public function  deelnemenAction(){
