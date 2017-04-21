@@ -188,7 +188,7 @@ class InstructeurModel extends AbstractModel {
                 COUNT(lessons.id) AS 'aanmeldingen'
                 FROM `lessons` 
                 join trainings on lessons.training_id = trainings.id 
-                JOIN registrations on lessons.id = registrations.lesson_id 
+                LEFT JOIN registrations on lessons.id = registrations.lesson_id 
                 GROUP BY lessons.id";
         $sth = $this->dbh->prepare($sql);
         $sth->execute();

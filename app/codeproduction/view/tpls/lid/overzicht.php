@@ -18,7 +18,7 @@
                     <td><?= $les->getTime();?></td>
                     <td><?= $les->getlocation();?></td>
                     <td><?= $les->getDescription();?></td>
-                    <?php if($les->getMax_persons()>$les->getAantalaangemeld()):?>
+                    <?php if($les->getMax_persons()>$les->getAantalaangemeld()&&$islesaangemeld->getLesson_id()!==$les->getId()):?>
                         <td><a href='?control=lid&action=deelnemen&id=<?= $les->getId();?>'>deelnemen</a></td>
                     <?php endif;?>
                     <?php if($les->getMax_persons()<=$les->getAantalaangemeld()):?>

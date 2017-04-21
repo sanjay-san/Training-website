@@ -2,7 +2,7 @@
 <div class="content">
     <table class="tableChange">
         <thead>
-          <tr>
+        <tr>
             <th>Voor n.</th>
             <th></th>
             <th>Achter n.</th>
@@ -16,10 +16,10 @@
             <th>Plaats</th>
             <th>Functie</th>
             <th colspan="2"></th>
-          </tr>
+        </tr>
         </thead>
         <tbody class="underline-gone">
-          <?php foreach ($gebruikers as $gebruiker):?>
+        <?php foreach ($gebruikers as $gebruiker):?>
             <tr>
                 <td><?= $gebruiker->getFirstname();?></td>
                 <td><?= $gebruiker->getPreprovision();?></td>
@@ -37,13 +37,13 @@
                 <td><a href='?control=instructeur&action=updategebruiker&id=<?= $gebruiker->getId();?>'> bewerk</a></td>
                 <td><a href='?control=instructeur&action=deletegebruiker&id=<?= $gebruiker->getId();?>'>/ X</a></td>
             </tr>
-          <?php endforeach;?>
+        <?php endforeach;?>
         <td>
-          <tr>
-            <td>
-              <a href="?control=instructeur&action=addgebruiker">nieuwe gebruiker</a>
-            </td>
-          </tr>
+            <tr>
+                <td>
+                    <a href="?control=instructeur&action=addlid">nieuwe gebruiker</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

@@ -61,6 +61,9 @@ class LidController extends AbstractController {
 
         $lessen = $this->model->lessonOverzicht();
         $this->view->set('lessen',$lessen);
+
+        $islesaangemeld = $this->model->islesaangemeld();
+        $this->view->set('islesaangemeld',$islesaangemeld);
     }
 
     public function  deelnemenAction(){

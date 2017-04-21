@@ -15,9 +15,14 @@
             <h1>Den Haag</h1>
         </section>
         <section class="login">
+
             <?php
             if ($typegebruiker !== 'bezoeker') {
                 echo '<a href="?control='.$typegebruiker.'&action=logout">uitloggen</a>';
+                echo '<br/>';
+                echo $typegebruiker;
+                echo '<br/>';
+                echo $_SESSION['gebruiker']->getFirstname();
             } else {
                 echo "
               <form method='POST' autocomplete='off'>
@@ -60,8 +65,7 @@
                 case 'lid':
                     echo '
                 <li><a href="?control=lid&action=default">Home</a></li>
-                <li><a href="?control=lid&action=inschrijven">Inschrijven</a></li>
-                <li><a href="?control=lid&action=lidBeheer">Lid beheer</a></li>
+                <li><a href="?control=lid&action=lidBeheer">Account beheer</a></li>
                 <li><a href="?control=lid&action=overzicht">Overzicht</a></li>';
                     break;
                 case 'instructeur':
@@ -69,7 +73,7 @@
                 <li><a href="?control=instructeur&action=default">Home</a></li>
                 <li><a href="?control=instructeur&action=lessenoverzicht">Lessen overzicht</a></li>
                 <li><a href="?control=instructeur&action=beheerGebruikers">Instructeur beheer</a></li>
-              <li><a href="?control=instructeur&action=ledenbeheer">leden beheer</a></li>';
+                ';
                     break;
                 case 'admin':
                     echo '
