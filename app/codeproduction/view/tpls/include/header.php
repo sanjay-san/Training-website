@@ -18,14 +18,12 @@
 
             <?php
             if ($typegebruiker !== 'bezoeker') {
-                echo '<a href="?control='.$typegebruiker.'&action=logout">uitloggen</a>';
-                echo '<br/>';
-                echo $typegebruiker;
-                echo '<br/>';
-                echo $_SESSION['gebruiker']->getFirstname();
+                echo '<a href="?control='.$typegebruiker.'&action=logout">uitloggen</a>';?>
+                <p>- <?php echo $typegebruiker;?> -</p>
+                <p>Welkom <?php echo $gebruikersnaam->getFirstname().' '.$gebruikersnaam->getLastname();?></p><?php
             } else {
                 echo "
-              <form method='POST' autocomplete='off'>
+              <form method='POST' action='?control=bezoeker&action=default' autocomplete='off'>
                 <table>
                   <tr>
                     <td>
@@ -72,8 +70,7 @@
                     echo '
                 <li><a href="?control=instructeur&action=default">Home</a></li>
                 <li><a href="?control=instructeur&action=lessenoverzicht">Lessen overzicht</a></li>
-                <li><a href="?control=instructeur&action=beheerGebruikers">Instructeur beheer</a></li>
-                ';
+                <li><a href="?control=instructeur&action=beheerGebruikers">Instructeur beheer</a></li> ';
                     break;
                 case 'admin':
                     echo '

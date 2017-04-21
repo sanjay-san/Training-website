@@ -53,6 +53,10 @@ class BezoekerController extends AbstractController {
     public function trainingsAction() {
       $typegebruiker = $this->model->getGebruikerRecht();
       $this->view->set('typegebruiker', $typegebruiker);
+
+      $lesnamen=$this->model->getTraining();
+      $this->view->set('lesnamen',$lesnamen);
+
       if($this->model->isPostLeeg()) {
         $this->view->set("note","vul uw gegevns in");
       } else {

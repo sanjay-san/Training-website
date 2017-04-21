@@ -65,10 +65,7 @@ class InstructeurModel extends AbstractModel {
         $sth= $this->dbh->prepare($sql);
         $sth->bindParam(':id',$id);
         $sth->execute();
-
-
     }
-
 
     public function addGebruiker(){
         $login   = filter_input(INPUT_POST, 'usn');
@@ -86,7 +83,7 @@ class InstructeurModel extends AbstractModel {
         $place = filter_input(INPUT_POST, 'stad');
         $role = filter_input(INPUT_POST, 'rol');
 
-        $sql="INSERT INTO `persons` ( `loginname`, `password`, `firstname`, `preprovision`, `lastname`, `dateofbirth`, `gender`, `emailaddress`, `hire_date`, `salary`, `street`, `postal_code`, `place`, `role`) 
+        $sql="INSERT INTO `persons` ( `loginname`, `password`, `firstname`, `preprovision`, `lastname`, `dateofbirth`, `gender`, `emailaddress`, `hire_date`, `salary`, `street`, `postal_code`, `place`, `role`)
                    VALUES ( :login, :password, :fname, :pname, :lastname, :dateofbirth, :gender, :email, :hiredate, :salary, :street, :postalcode, :place, :role)";
 
         $stmnt = $this->dbh->prepare($sql);
@@ -134,9 +131,9 @@ class InstructeurModel extends AbstractModel {
                                     lastname=:lastname,
                                     dateofbirth=:dateofbirth,
                                     gender=:gender,
-                                    emailaddress=:email,  
+                                    emailaddress=:email,
                                     hire_date=:hire_date,
-                                    salary=:salary, 
+                                    salary=:salary,
                                     street=:street,
                                     postal_code=:postalcode,
                                     place=:place
@@ -168,28 +165,28 @@ class InstructeurModel extends AbstractModel {
             return REQUEST_FAILURE_DATA_INVALID;
             echo "</pre>";
         }
-
         $aantalGewijzigd = $stmnt->rowCount();
         if($aantalGewijzigd===1) {
             return REQUEST_SUCCESS;
         }
         return REQUEST_NOTHING_CHANGED;
-
-
     }
 
     public function lessonOverzicht(){
-        $sql = "SELECT  lessons.id, lessons.time, 
-                        lessons.date, lessons.location,
-                        lessons.max_persons, 
-                        trainings.description, trainings.duration, 
-                        trainings.extra_costs, 
-                        registrations.member_id, 
+        $sql = "SELECT  lessons.id,
+                        DATE_FORMAT(lessons.date, '%Y-%m-%d') as `date`,
+                        DATE_FORMAT(lessons.time,'%H:%i') as `time`,
+                        lessons.location,
+                        lessons.max_persons,
+                        trainings.description, trainings.duration,
+                        trainings.extra_costs,
+                        registrations.member_id,
                 COUNT(lessons.id) AS 'aanmeldingen'
                 FROM `lessons` 
                 join trainings on lessons.training_id = trainings.id 
                 LEFT JOIN registrations on lessons.id = registrations.lesson_id 
                 GROUP BY lessons.id";
+      
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         return  $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
@@ -203,8 +200,8 @@ class InstructeurModel extends AbstractModel {
         $tipe   = filter_input(INPUT_POST, 'tipe');
         $maximum= filter_input(INPUT_POST, 'maximum');
 
-        $sql=  "UPDATE lessons 
-                SET `date`=:datum,`time`=:tijd, max_persons=:maximum, training_id=:tipe 
+        $sql=  "UPDATE lessons
+                SET `date`=:datum,`time`=:tijd, max_persons=:maximum, training_id=:tipe
                 WHERE id=:id";
 
         $stmnt = $this->dbh->prepare($sql);
@@ -229,7 +226,6 @@ class InstructeurModel extends AbstractModel {
             return REQUEST_SUCCESS;
         }
         return REQUEST_NOTHING_CHANGED;
-
     }
 
     public function verwijderLes(){
@@ -251,35 +247,33 @@ class InstructeurModel extends AbstractModel {
     public function  getAlleDeelnemers(){
         $id= filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);
 
-              $sql="SELECT    lessons.id AS 'lessonid', 
+              $sql="SELECT    lessons.id AS 'lessonid',
                         persons.firstname AS 'firstname',
                         persons.preprovision AS 'preprovision',
                         persons.lastname AS 'lastname',
                         trainings.description AS 'trainingsnaam'
-                        FROM `lessons` 
-                        join registrations on registrations.lesson_id = lessons.id 
-                        join persons on registrations.member_id = persons.id 
-                        JOIN trainings on lessons.training_id = trainings.id 
+                        FROM `lessons`
+                        join registrations on registrations.lesson_id = lessons.id
+                        join persons on registrations.member_id = persons.id
+                        JOIN trainings on lessons.training_id = trainings.id
                         WHERE lessons.id=:id";
         $sth= $this->dbh->prepare($sql);
         $sth->bindParam(':id',$id);
         $sth->execute();
         $deelnemers = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Lesson');
         return $deelnemers;
-
     }
 
     public function addles(){
-        $tijd       = filter_input(INPUT_POST, 'time');
         $datum      = filter_input(INPUT_POST, 'datum');
+        $tijd       = filter_input(INPUT_POST,'time');
         $location   = filter_input(INPUT_POST, 'location');
         $maximum    = filter_input(INPUT_POST, 'maximum');
         $tipe       = filter_input(INPUT_POST, 'tipe');
         $instructeur= filter_input(INPUT_POST,  'instructeur');
 
-        $sql="  INSERT INTO `lessons` (`id`, `time`, `date`, `location`, `max_persons`, `training_id`, `instructor_id`) 
+        $sql="  INSERT INTO `lessons` (`id`, `time`, `date`, `location`, `max_persons`, `training_id`, `instructor_id`)
                 VALUES (NULL, :tijd, :datum, :locatie, :maximum, :tipe, :instructeur);";
-
 
         $stmnt = $this->dbh->prepare($sql);
         $stmnt->bindParam(':tijd', $tijd);

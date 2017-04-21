@@ -14,9 +14,13 @@ class AdminController extends AbstractController {
     $this->view->set('typegebruiker', $typegebruiker);
     $instructeurs = $this->model->getInstructeurs();
     $this->view->set('instructeurs', $instructeurs);
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
   }
 
   public function ledenAction() {
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
     $typegebruiker = $this->model->getGebruikerRecht();
     $this->view->set('typegebruiker', $typegebruiker);
     $leden = $this->model->getLeden();
@@ -24,6 +28,8 @@ class AdminController extends AbstractController {
   }
 
   public function trainingsvormenAction() {
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
     $typegebruiker = $this->model->getGebruikerRecht();
     $this->view->set('typegebruiker', $typegebruiker);
     $trainingsvormen = $this->model->getTrainingsVormen();
@@ -31,6 +37,8 @@ class AdminController extends AbstractController {
   }
 
   public function addinstAction() {
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
     $typegebruiker = $this->model->getGebruikerRecht();
     $this->view->set('typegebruiker', $typegebruiker);
     if ($this->model->isPostLeeg()) {
@@ -53,6 +61,8 @@ class AdminController extends AbstractController {
   }
 
   public function editinstAction() {
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
     $typegebruiker = $this->model->getGebruikerRecht();
     $this->view->set('typegebruiker', $typegebruiker);
     $instructeur = $this->model->getInstructeur();
@@ -82,6 +92,8 @@ class AdminController extends AbstractController {
   }
 
   public function addtrainAction() {
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
     $typegebruiker = $this->model->getGebruikerRecht();
     $this->view->set('typegebruiker', $typegebruiker);
     if ($this->model->isPostLeeg()) {
@@ -104,6 +116,8 @@ class AdminController extends AbstractController {
   }
 
   public function edittrainAction() {
+    $gebruikersnaam= $this->model->getGebruiker();
+    $this->view->set('gebruikersnaam',$gebruikersnaam);
     $typegebruiker = $this->model->getGebruikerRecht();
     $this->view->set('typegebruiker', $typegebruiker);
     $trainingsvorm = $this->model->getTrainingsVorm();

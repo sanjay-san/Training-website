@@ -23,7 +23,6 @@
             <td><?php if($les->getAanmeldingen()<2){
                     echo "-";}
                 if($les->getAanmeldingen()>1){echo $les->getAanmeldingen();}?></td>
-
             <td><a href='?control=instructeur&action=deelnemers&id=<?= $les->getId();?>'>Lijst</a></td>
             <td><a href='?control=instructeur&action=updateles&id=<?= $les->getId();?>'>Bewerk</a></td>
             <td><a href='?control=instructeur&action=deleteles&id=<?= $les->getId();?>'>Verwijder</a></td>

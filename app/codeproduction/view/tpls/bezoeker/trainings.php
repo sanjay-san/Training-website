@@ -6,10 +6,11 @@
    <h1>Lessen</h1>
    <p>
      <br>U kunt zich inschrijven voor de volgende lessen:
-     <br>
-     <br>1. Stootzak training
-     <br>2. KickBoksen
-     <br>3. MMA
+     <?php foreach ($lesnamen as $lesnaam):?>
+       <tr>
+         <td><br><?= $lesnaam->getDescription(); ?></td>
+       </tr>
+     <?php endforeach;?>
    </p>
 </div>
 

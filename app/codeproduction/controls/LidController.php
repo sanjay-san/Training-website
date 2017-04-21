@@ -16,38 +16,40 @@ class LidController extends AbstractController {
 // kan de defaultAction niet in de AbstractController gezet worden?
     public function defaultAction() {
         $this->gebruikerrecht();
-        echo 'hello lid';
+
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function inschrijvenAction() {
         $this->gebruikerrecht();
-
-
-
-
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
     public function lidBeheerAction() {
         $this->gebruikerrecht();
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
 
         if($this->model->isPostLeeg()){
-            echo 'vul de gegevens in';
+            $this->view->set('note', 'vul de gegevens in');
         }
         else{
             $result = $this->model->updateGebruiker();
             switch($result){
                 case REQUEST_SUCCESS:
                     $this->forward('default');
-                    echo 'succes?';
+                    $this->view->set('note', 'Succes');
                     break;
                 case REQUEST_FAILURE_DATA_INCOMPLETE:
-                    echo "De gegevens waren incompleet. Vul compleet in!";
+                    $this->view->set('note', 'De gegevens waren incompleet. Vul compleet in!');
                     break;
                 case REQUEST_NOTHING_CHANGED:
-                    echo "Er was niets te wijzigen";
+                    $this->view->set('note', 'Er was niets te wijzigen');
                     break;
                 case REQUEST_FAILURE_DATA_INVALID:
-                    echo "Vul een correcte datum/tijd in.";
+                    $this->view->set('note', 'Vul een correcte datum/tijd in.');
                     break;
             }
         }
@@ -57,18 +59,26 @@ class LidController extends AbstractController {
 
     public function overzichtAction(){
         $this->gebruikerrecht();;
-        echo 'hello lid overzicht';
-
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
         $lessen = $this->model->lessonOverzicht();
         $this->view->set('lessen',$lessen);
-
         $islesaangemeld = $this->model->islesaangemeld();
         $this->view->set('islesaangemeld',$islesaangemeld);
+        $overzichten=$this->model->lessonOverzicht();
+        $this->view->set('overzichten',$overzichten);
+
     }
 
     public function  deelnemenAction(){
         $this->model->deelnemerAanmelden();
         $this->forward('overzicht');
+        $gebruikersnaam= $this->model->getGebruiker();
+        $this->view->set('gebruikersnaam',$gebruikersnaam);
     }
 
+    public function deletelesAction(){
+        $this->model->verwijderLes();
+        $this->forward('overzichtInschrijving');
+    }
 }

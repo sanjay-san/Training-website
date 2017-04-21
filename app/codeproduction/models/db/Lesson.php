@@ -22,4 +22,5 @@ class Lesson extends Entiteit {
     protected $duration;
     protected $extra_costs;
     protected $aanmeldingen;
+    protected $member_id;
 }

@@ -34,6 +34,7 @@ class BezoekerModel extends  AbstractModel{
     {
        $loginname= filter_input(INPUT_POST, 'loginname');
        $password= filter_input(INPUT_POST, 'password');
+       $password2= filter_input(INPUT_POST,'password2');
        $firstname= filter_input(INPUT_POST, 'firstname');
        $preprovision=filter_input(INPUT_POST, 'preprovision');
        $lastname=filter_input(INPUT_POST, 'lastname');
@@ -44,8 +45,17 @@ class BezoekerModel extends  AbstractModel{
        $postalcode=filter_input(INPUT_POST,'postalcode');
       /* $place=filter_input(INPUT_POST,'place');*/
 
-       if($firstname===null || $password===null || $lastname===null || $gender===null ||$dateofbirth===null ||$email===null){
+       if($firstname===null || $password===null ||  $password2===null || $lastname===null || $gender===null ||$dateofbirth===null ||$email===null){
          return REQUEST_FAILURE_DATA_INCOMPLETE;
+       }
+
+       if(empty($firstname) || empty($password) ||  empty($password2) || empty($lastname) || empty($gender) ||empty($dateofbirth) ||empty($email)){
+         return REQUEST_FAILURE_DATA_INCOMPLETE;
+       }
+
+       if($_POST['password']!==$_POST['password2'])
+       {
+           return REQUEST_FAILURE_DATA_INVALID;
        }
 
        $sql=   "INSERT INTO `persons`  (loginname,firstname,password,preprovision,lastname,dateofbirth,gender,emailaddress,postal_code,street,role)
@@ -79,5 +89,11 @@ class BezoekerModel extends  AbstractModel{
        return REQUEST_NOTHING_CHANGED;
     }
 
-
+    public function getTraining(){
+        $sql="SELECT * FROM trainings";
+        $sth= $this->dbh->prepare($sql);
+        $sth->execute();
+        $trainingnamen = $sth->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__.'\db\Training');
+        return $trainingnamen;
+    }
 }

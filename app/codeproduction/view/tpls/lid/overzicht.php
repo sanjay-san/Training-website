@@ -1,14 +1,23 @@
 <?php include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/include/header.php"; ?>
 <div class="content">
-    <table>
-        <thead>
+  <table>
+    <thead>
+      <tr>
+        <td>Datum</td>
+        <td>Tijd</td>
+        <td>Sport</td>
+        <td>Aantal ingeschreven</td>
+        <td>Verwijderen</td>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($overzichten as $overzicht):?>
         <tr>
-            <td>Datum</td>
-            <td>Tijd</td>
-            <td>Lokaal</td>
-            <td>Sport</td>
-            <td></td>
-
+          <td><?= $overzicht->getDate();?></td>
+          <td><?= $overzicht->getTime();?></td>
+          <td><?= $overzicht->getDescription();?></td>
+          <td><?= $overzicht->getAanmeldingen();?></td>
+          <td><a href='?control=lid&action=deleteles&id=<?= $overzicht->getId();?>'>Verwijder</a></td>
         </tr>
         </thead>
         <tbody>
