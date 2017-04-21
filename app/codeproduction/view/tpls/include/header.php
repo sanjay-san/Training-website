@@ -22,7 +22,7 @@
                 <p>Welkom <?php echo $gebruikersnaam->getFirstname().' '.$gebruikersnaam->getLastname();?></p><?php
             } else {
                 echo "
-              <form method='POST' autocomplete='off'>
+              <form method='POST' action='?control=bezoeker&action=default' autocomplete='off'>
                 <table>
                   <tr>
                     <td>
