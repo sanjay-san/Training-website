@@ -63,8 +63,7 @@
   background-color: #bd30ff;
 }
 form td{
-  background-color: #000;
-  color: #fff;
+  color: #000;
 }
 form td input,form td select{
   width: 100%;
@@ -159,6 +158,8 @@ body>section>#content {
 
 .table2 input{
   margin-left: 82px;
+  background-color:#ffffff;
+  font:#000000;
 }
 
 .gbrnm-r{

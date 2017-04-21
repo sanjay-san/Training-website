@@ -71,7 +71,7 @@ class LidModel extends AbstractModel {
     public function getOverzicht()
     {
       $sql='SELECT DATE_FORMAT(lessons.date, "%Y-%m-%d") as `date`,
-                   DATE_FORMAT(lessons.time,"%H:%i") as `time`,
+                  lessons.time,
                   lessons.max_persons as`max_persons`,
                   lessons.training_id as `training_id`
                   trainings.description,
@@ -142,11 +142,11 @@ class LidModel extends AbstractModel {
     }
 
     public function lessonOverzicht(){
-        $sql = "SELECT lessons.id, COUNT(lessons.id)AS  'aantalaangemeld', lessons.date, 
-                        lessons.location, lessons.max_persons, 
-                        trainings.description, trainings.duration, 
-                        trainings.extra_costs 
-                FROM `lessons` 
+        $sql = "SELECT lessons.id, COUNT(lessons.id)AS  'aantalaangemeld', lessons.date,
+                        lessons.location, lessons.max_persons,
+                        trainings.description, trainings.duration,
+                        trainings.extra_costs
+                FROM `lessons`
                 JOIN trainings on lessons.training_id = trainings.id
                 RIGHT JOIN registrations on lessons.id = registrations.lesson_id
                 GROUP BY lessons.id";
@@ -167,7 +167,7 @@ class LidModel extends AbstractModel {
             return REQUEST_FAILURE_DATA_INVALID;
         }
 
-        $sql="INSERT INTO `registrations` ( `member_id`, `lesson_id`) 
+        $sql="INSERT INTO `registrations` ( `member_id`, `lesson_id`)
               VALUES (:id, :lesid)";
 
         $stmnt = $this->dbh->prepare($sql);

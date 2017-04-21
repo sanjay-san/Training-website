@@ -18,7 +18,7 @@ include str_replace("\\", DIRECTORY_SEPARATOR, BASE_NAMESPACE)."view/tpls/includ
                 </tr>
                 <tr>
                     <td>Tijds duur</td>
-                    <td><input type="text" placeholder="%Y-%m-%d %h:%i:%s.%f" name="time"
+                    <td><input type="text" placeholder="Tijd" name="time"
                                required="required" >
                     </td>
                 </tr>

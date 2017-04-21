@@ -266,7 +266,6 @@ class InstructeurModel extends AbstractModel {
     public function addles(){
         $datum      = filter_input(INPUT_POST, 'datum');
         $tijd       = filter_input(INPUT_POST,'time');
-        //$tijd2      =$datum.' 00:'.$tijd.':00.000000';
         $location   = filter_input(INPUT_POST, 'location');
         $maximum    = filter_input(INPUT_POST, 'maximum');
         $tipe       = filter_input(INPUT_POST, 'tipe');
